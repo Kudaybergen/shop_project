@@ -16,4 +16,9 @@ public class AuthController {
     public String test(){
         return "test";
     }
+
+    @GetMapping("/catalog")
+    public String catalog(){
+        return "catalog";
+    }
 }
