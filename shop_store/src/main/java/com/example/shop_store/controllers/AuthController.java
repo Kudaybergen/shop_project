@@ -12,5 +12,8 @@ public class AuthController {
         return "index";
     }
 
-    //faoenfoineoifaneoifn
+    @GetMapping("/test")
+    public String test(){
+        return "test";
+    }
 }
