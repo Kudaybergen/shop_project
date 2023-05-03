@@ -1,1 +1,0 @@
-# shop_store_project
