@@ -5,6 +5,16 @@
     <title>catalog view</title>
 </head>
 <body>
-<h1>more info</h1>
+<h1>more info</h1><br>
+<div>
+    id:
+    <span th:text="${good.getId()}"></span><br>
+    name:
+    <span th:text="${good.getGoodName()}"></span><br>
+    desc:
+    <span th:text="${good.getGoodsDesc()}"></span><br>
+    price:
+    <span th:text="${good.getPrice()}"></span><br>
+</div>
 </body>
 </html>

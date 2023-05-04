@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Optional;
+
 @Controller
 public class MainController {
     @Autowired
@@ -32,14 +34,15 @@ public class MainController {
     @GetMapping("/catalog")
     public String catalog(Model model){
         Iterable<Goods> goods = goodsRepo.findAll();
-        System.out.println(goods);
         model.addAttribute("goods", goods);
         return "catalog";
     }
 
     @GetMapping("/catalog/{id}")
-    public String catalogView(@PathVariable Integer id){
-        System.out.println(id);
+    public String catalogView(@PathVariable String id, Model model){
+        Long long_id = Long.parseLong(id);
+        Goods good = goodsRepo.findById(long_id).get();
+        model.addAttribute("good", good);
         return "catalogView";
     }
 }
