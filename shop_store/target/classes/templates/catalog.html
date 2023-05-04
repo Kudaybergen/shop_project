@@ -5,6 +5,16 @@
     <title>catalog</title>
 </head>
 <body>
-catalog page
+<h1>catalog page</h1>
+<div th:each="good: ${goods}">
+    name:
+    <p th:text="${good.getGoodName()}"></p>
+    desc:
+    <p th:text="${good.getGoodsDesc()}"></p>
+    price:
+    <p th:text="${good.getPrice()}"></p>
+    id:
+    <p th:text="${good.getId()}"></p>
+</div>
 </body>
 </html>
