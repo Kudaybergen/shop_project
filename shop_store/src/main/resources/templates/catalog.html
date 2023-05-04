@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>catalog</title>
+    <style>
+        .each_good{
+            background-color: antiquewhite;
+        }
+    </style>
 </head>
 <body>
 <h1>catalog page</h1>
-<div th:each="good: ${goods}">
+<div class="each_good" th:each="good: ${goods}">
+    <hr>
     name:
-    <p th:text="${good.getGoodName()}"></p>
+    <span th:text="${good.getGoodName()}"></span><br>
     desc:
-    <p th:text="${good.getGoodsDesc()}"></p>
+    <span th:text="${good.getGoodsDesc()}"></span><br>
     price:
-    <p th:text="${good.getPrice()}"></p>
+    <span th:text="${good.getPrice()}"></span><br>
     id:
-    <p th:text="${good.getId()}"></p>
+    <span th:text="${good.getId()}"></span><br>
+    <button><a th:href="@{/catalog/{id}(id=${good.getId()})}">see more</a></button>
+    <hr>
 </div>
 </body>
 </html>
