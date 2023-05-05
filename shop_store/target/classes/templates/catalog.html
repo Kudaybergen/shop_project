@@ -14,13 +14,15 @@
 <div class="each_good" th:each="good: ${goods}">
     <hr>
     name:
-    <span th:text="${good.getGoodName()}"></span><br>
+    <span th:text="${good.goodName}"></span><br>
     desc:
     <span th:text="${good.getGoodsDesc()}"></span><br>
     price:
     <span th:text="${good.getPrice()}"></span><br>
     id:
     <span th:text="${good.getId()}"></span><br>
+    <img th:src="${'/img/' + good.filename}" alt="some photo" width="300px" height="300px"><br>
+
     <button><a th:href="@{/catalog/{id}(id=${good.getId()})}">see more</a></button>
     <hr>
 </div>

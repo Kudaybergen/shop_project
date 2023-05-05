@@ -15,6 +15,7 @@ public class Goods {
     private String goodName;
     private String goodsDesc;
     private Integer price;
+    private String filename;
 
     public Goods(){}
 
@@ -32,6 +33,14 @@ public class Goods {
                 ", goodsDesc='" + goodsDesc + '\'' +
                 ", price=" + price +
                 '}';
+    }
+
+    public String getFilename() {
+        return filename;
+    }
+
+    public void setFilename(String filename) {
+        this.filename = filename;
     }
 
     public String getGoodName() {

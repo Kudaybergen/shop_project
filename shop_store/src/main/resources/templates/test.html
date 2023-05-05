@@ -7,44 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        .page-footer {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .contact-info {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .contact-info-item {
-            margin: 0 20px;
-            font-size: 14px;
-            line-height: 1.5;
-        }
-
-        .fa {
-            margin-right: 5px;
-        }
-    </style>
 </head>
 <body>
 
-<p class="qwe">ok</p>
+<span th:text="${'/qwe/' + png}"></span><br>
 
-<footer class="page-footer">
-    <div class="contact-info">
-        <p class="contact-info-item"><i class="fa fa-envelope"></i> info@example.com</p>
-        <p class="contact-info-item"><i class="fa fa-phone"></i> 555-1234-5678</p>
-        <p class="contact-info-item"><i class="fa fa-user"></i> John Doe</p>
-    </div>
-</footer>
+<img src="/uploads/2b2c5a65-d74e-4965-b5c7-92beee371933.Screenshot from 2023-04-19 23-36-08.png" alt="awdwad"><br>
 
-
+<img th:src="${'/img/' + png}" alt="finweoifnaeowinf">
 </body>
 </html>

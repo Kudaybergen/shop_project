@@ -7,10 +7,11 @@
 <body>
 <h1>add new product</h1><br>
 
-<form action="/add_good" method="post">
-    <input type="text" name="goodName" placeholder="enter name">
-    <input type="text" name="goodDesc" placeholder="enter description">
-    <input type="text" name="goodPrice" placeholder="enter price">
+<form action="/add_good" method="post" enctype="multipart/form-data">
+    <input type="text" name="goodName" placeholder="enter name"><br>
+    <input type="text" name="goodDesc" placeholder="enter description"><br>
+    <input type="file" name="file" placeholder="enter photo"><br>
+    <input type="text" name="goodPrice" placeholder="enter price"><br>
     <input type="submit" value="create">
 </form>
 
