@@ -3,9 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello</title>
+    <link rel="stylesheet" th:href="@{css/style.css}">
 </head>
 <body>
+<p class="qwe">ok</p>
+<nav th:replace="fragments :: navigation"></nav>
 click to see <a href="/catalog">catalog</a><br>
-click to <a href="/add_good">add good</a>
+click to <a href="/add_good">add good</a><br>
 </body>
 </html>
