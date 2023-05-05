@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <title>Hello</title>
     <link rel="stylesheet" th:href="@{css/style.css}">
+    <style th:replace="fragments :: styleOne"></style>
 </head>
 <body>
-<p class="qwe">ok</p>
 <nav th:replace="fragments :: navigation"></nav>
+
+<br><br><br>
 click to see <a href="/catalog">catalog</a><br>
 click to <a href="/add_good">add good</a><br>
+<br><br><br><br><br><br>
+
+<footer th:replace="fragments :: information"></footer>
 </body>
 </html>

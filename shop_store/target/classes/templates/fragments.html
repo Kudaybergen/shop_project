@@ -3,35 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-<!--    <style>-->
-<!--        .navigation {-->
-<!--            background-color: #333;-->
-<!--            display: flex;-->
-<!--            justify-content: center;-->
-<!--        }-->
+    <style th:fragment="styleOne">
+        /*nav*/
+        .navigation {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+        }
 
-<!--        .navigation-list {-->
-<!--            list-style-type: none;-->
-<!--            margin: 0;-->
-<!--            padding: 0;-->
-<!--            display: flex;-->
-<!--        }-->
+        .navigation-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
 
-<!--        .navigation-item {-->
-<!--            margin: 0 10px;-->
-<!--        }-->
+        .navigation-item {
+            margin: 0 10px;
+        }
 
-<!--        .navigation-link {-->
-<!--            display: block;-->
-<!--            color: #fff;-->
-<!--            padding: 10px;-->
-<!--            text-decoration: none;-->
-<!--        }-->
+        .navigation-link {
+            display: block;
+            color: #fff;
+            padding: 10px;
+            text-decoration: none;
+        }
 
-<!--        .navigation-link:hover {-->
-<!--            background-color: #555;-->
-<!--        }-->
+        .navigation-link:hover {
+            background-color: #555;
+        }
 
+        /*footer*/
+        .page-footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-info-item {
+            margin: 0 20px;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .fa {
+            margin-right: 5px;
+        }
     </style>
 </head>
 <body>
@@ -44,6 +69,16 @@
         <li class="navigation-item"><a href="#" class="navigation-link">Contact</a></li>
     </ul>
 </nav>
+
+<br><br><br><br><br><br>
+
+<footer th:fragment="information" class="page-footer">
+    <div class="contact-info">
+        <p class="contact-info-item"><i class="fa fa-envelope"></i> info@example.com</p>
+        <p class="contact-info-item"><i class="fa fa-phone"></i> 555-1234-5678</p>
+        <p class="contact-info-item"><i class="fa fa-user"></i> John Doe</p>
+    </div>
+</footer>
 
 </body>
 </html>
