@@ -6,6 +6,9 @@
     <style th:replace="fragments :: styleOne"></style>
 </head>
 <body>
+<nav th:replace="fragments :: navigation"></nav>
+
+
 <h1>catalog page</h1>
 <div class="each_good" th:each="good: ${goods}">
     <hr>
@@ -22,5 +25,8 @@
     <button><a th:href="@{/catalog/{id}(id=${good.getId()})}">see more</a></button>
     <hr>
 </div>
+
+
+<footer th:replace="fragments :: information"></footer>
 </body>
 </html>

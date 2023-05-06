@@ -5,6 +5,9 @@
     <title>add</title>
 </head>
 <body>
+<nav th:replace="fragments :: navigation"></nav>
+
+
 <h1>add new product</h1><br>
 
 <form action="/add_good" method="post" enctype="multipart/form-data">
@@ -15,5 +18,7 @@
     <input type="submit" value="create">
 </form>
 
+
+<footer th:replace="fragments :: information"></footer>
 </body>
 </html>
