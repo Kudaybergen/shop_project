@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>catalog view</title>
+    <style th:replace="fragments :: styleOne"></style>
 </head>
 <body>
 <h1>more info</h1><br>
@@ -15,6 +16,7 @@
     <span th:text="${good.getGoodsDesc()}"></span><br>
     price:
     <span th:text="${good.getPrice()}"></span><br>
+    <img class="ph" th:src="${'/img/' + good.filename}" alt="some photo"><br>
 </div>
 </body>
 </html>
