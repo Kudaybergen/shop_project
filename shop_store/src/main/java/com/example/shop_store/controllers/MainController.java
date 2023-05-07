@@ -17,6 +17,7 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -62,8 +63,14 @@ public class MainController {
 
     @GetMapping("/catalog")
     public String catalog(Model model){
-        Iterable<Goods> goods = goodsRepo.findAll();
-        model.addAttribute("goods", goods);
+        List<Goods> men = goodsRepo.findAllByCategory(1);
+        model.addAttribute("men", men);
+
+        List<Goods> women = goodsRepo.findAllByCategory(2);
+        model.addAttribute("women", women);
+
+        List<Goods> children = goodsRepo.findAllByCategory(3);
+        model.addAttribute("children", children);
         return "catalog";
     }
 
