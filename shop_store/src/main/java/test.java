@@ -1,11 +1,13 @@
-import com.example.shop_store.domain.Goods;
 
+import com.example.shop_store.repos.GoodsRepo;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
 public class test {
+    @Autowired
+    private static GoodsRepo goodsRepo;
     public static void main(String[] args) {
-        Goods goods = new Goods();
-        goods.setGoodName("shirt");
-        goods.setGoodsDesc("white very goods");
-        goods.setPrice(10000);
-        System.out.println(goods);
+        System.out.println(goodsRepo);
     }
 }

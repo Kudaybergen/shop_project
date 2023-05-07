@@ -1,6 +1,8 @@
 package com.example.shop_store.controllers;
 
+import com.example.shop_store.domain.Category;
 import com.example.shop_store.domain.Goods;
+import com.example.shop_store.repos.CategoryRepo;
 import com.example.shop_store.repos.GoodsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Iterator;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -21,6 +24,9 @@ import java.util.UUID;
 public class MainController {
     @Autowired
     private GoodsRepo goodsRepo;
+
+    @Autowired
+    private CategoryRepo categoryRepo;
 
     @Value("${upload.path}")
     private String uploadPath;
@@ -68,10 +74,20 @@ public class MainController {
         return "catalogView";
     }
 
-    @GetMapping("/test")
-    public String test(Model model){
-        String png_url = "2b2c5a65-d74e-4965-b5c7-92beee371933.Screenshot from 2023-04-19 23-36-08.png";
-        model.addAttribute("png", png_url);
-        return "test";
+    @GetMapping("/categories")
+    public String test1(Model model){
+
+        Iterable<Category> categories = categoryRepo.findAll();
+        model.addAttribute("categories", categories);
+
+        return "categories";
+    }
+
+    @PostMapping("/deleteGood")
+    public String deleteGood(@RequestParam(value = "id", required = false) Long id){
+        System.out.println(id * 1000);
+        goodsRepo.deleteById(id);
+
+        return "redirect:/catalog";
     }
 }

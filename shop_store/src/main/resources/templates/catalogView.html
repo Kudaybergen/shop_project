@@ -22,6 +22,11 @@
     <img class="ph" th:src="${'/img/' + good.filename}" alt="some photo"><br>
 </div>
 
+<form action="/deleteGood" method="post">
+    <input type="hidden" name="id" th:value="${good.getId()}">
+    <input type="submit" value="delete">
+</form>
+
 
 <footer th:replace="fragments :: information"></footer>
 </body>
