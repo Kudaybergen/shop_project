@@ -39,8 +39,9 @@ public class MainController {
     public String addGoodP(@RequestParam(value = "goodName", required = false) String goodName,
                            @RequestParam(value = "goodDesc", required = false) String goodDesc,
                            @RequestParam(value = "goodPrice", required = false) Integer price,
+                           @RequestParam(value = "category", required = false) Integer category,
                            @RequestParam(value = "file", required = false) MultipartFile multipartFile) throws IOException {
-        Goods goods = new Goods(goodName, goodDesc, price);
+        Goods goods = new Goods(goodName, goodDesc, price, category);
         if (multipartFile != null){
             File someFile = new File(uploadPath);
 

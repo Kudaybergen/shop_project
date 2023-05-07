@@ -20,6 +20,8 @@
     <span th:text="${good.getPrice()}"></span><br>
     id:
     <span th:text="${good.getId()}"></span><br>
+    category:
+    <span th:text="${good.getCategory()}"></span><br>
     <img class="ph" th:src="${'/img/' + good.filename}" alt="some photo"><br>
 
     <button><a th:href="@{/catalog/{id}(id=${good.getId()})}">see more</a></button>

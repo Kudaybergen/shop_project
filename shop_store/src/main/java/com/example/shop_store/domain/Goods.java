@@ -16,13 +16,24 @@ public class Goods {
     private String goodsDesc;
     private Integer price;
     private String filename;
+    private Integer category;//1 man, 2 woman, 3 child
+
+
+    public int getCategory() {
+        return category;
+    }
+
+    public void setCategory(int category) {
+        this.category = category;
+    }
 
     public Goods(){}
 
-    public Goods(String goodName, String goodsDesc, Integer price) {
+    public Goods(String goodName, String goodsDesc, Integer price, Integer category) {
         this.goodName = goodName;
         this.goodsDesc = goodsDesc;
         this.price = price;
+        this.category = category;
     }
 
     @Override
@@ -32,6 +43,8 @@ public class Goods {
                 ", goodName='" + goodName + '\'' +
                 ", goodsDesc='" + goodsDesc + '\'' +
                 ", price=" + price +
+                ", filename='" + filename + '\'' +
+                ", category=" + category +
                 '}';
     }
 
