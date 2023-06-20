@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>paket test</title>
+</head>
+<body>
+<h1>paket test</h1><br><br><br>
+
+<div th:each="paket : ${pakets}">
+    <hr>
+    id: <span th:text="${paket.getId()}"></span><br>
+    имя: <span th:text="${paket.getName()}"></span><br>
+    описание: <span th:text="${paket.getDesc()}"></span><br>
+    цена: <span th:text="${paket.getPrice()}"></span><br>
+    артикул: <span th:text="${paket.getArtikul()}"></span><br>
+    ед.изм: <span th:text="${paket.getMeasurement()}"></span><br>
+    <img class="ph" th:src="${'/img/' + paket.filename}" alt="some photo"><br>
+    <hr>
+</div>
+
+</body>
+</html>

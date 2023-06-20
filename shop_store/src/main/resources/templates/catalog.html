@@ -29,41 +29,43 @@
 <!--</div>-->
 
 <h1>MEN</h1>
-<div class="men" th:each="man : ${men}">
-    <hr>
-    id: <span th:text="${man.getId()}"></span><br>
-    name: <span th:text="${man.getGoodName()}"></span><br>
-    des: <span th:text="${man.getGoodsDesc()}"></span><br>
-    category: <span th:text="${man.getCategory()}"></span><br>
-    <img class="ph" th:src="${'/img/' + man.filename}" alt="some photo"><br>
-    <button><a th:href="@{/catalog/{id}(id=${man.getId()})}">see more</a></button>
-    <hr>
+<div class="men">
+    <div th:each="man : ${men}">
+        id: <span th:text="${man.getId()}"></span><br>
+        name: <span th:text="${man.getGoodName()}"></span><br>
+        des: <span th:text="${man.getGoodsDesc()}"></span><br>
+        category: <span th:text="${man.getCategory()}"></span><br>
+        <img class="ph" th:src="${'/img/' + man.filename}" alt="some photo"><br>
+        <button><a th:href="@{/catalog/{id}(id=${man.getId()})}">see more</a></button>
+        <hr>
+    </div>
 </div>
 <br><br><br><br><br><br>
 <h1>WOMEN</h1>
-<div class="women" th:each="woman : ${women}">
-    <hr>
-    id: <span th:text="${woman.getId()}"></span><br>
-    name: <span th:text="${woman.getGoodName()}"></span><br>
-    des: <span th:text="${woman.getGoodsDesc()}"></span><br>
-    category: <span th:text="${woman.getCategory()}"></span><br>
-    <img class="ph" th:src="${'/img/' + woman.filename}" alt="some photo"><br>
-    <button><a th:href="@{/catalog/{id}(id=${woman.getId()})}">see more</a></button>
-    <hr>
+<div class="women">
+    <div th:each="woman : ${women}">
+        id: <span th:text="${woman.getId()}"></span><br>
+        name: <span th:text="${woman.getGoodName()}"></span><br>
+        des: <span th:text="${woman.getGoodsDesc()}"></span><br>
+        category: <span th:text="${woman.getCategory()}"></span><br>
+        <img class="ph" th:src="${'/img/' + woman.filename}" alt="some photo"><br>
+        <button><a th:href="@{/catalog/{id}(id=${woman.getId()})}">see more</a></button>
+        <hr>
+    </div>
 </div>
 <br><br><br><br><br><br>
 <h1>CHILDREN</h1>
-<div class="children" th:each="child : ${children}">
-    <hr>
-    id: <span th:text="${child.getId()}"></span><br>
-    name: <span th:text="${child.getGoodName()}"></span><br>
-    des: <span th:text="${child.getGoodsDesc()}"></span><br>
-    category: <span th:text="${child.getCategory()}"></span><br>
-    <img class="ph" th:src="${'/img/' + child.filename}" alt="some photo"><br>
-    <button><a th:href="@{/catalog/{id}(id=${child.getId()})}">see more</a></button>
-    <hr>
+<div class="children">
+    <div th:each="child : ${children}">
+        id: <span th:text="${child.getId()}"></span><br>
+        name: <span th:text="${child.getGoodName()}"></span><br>
+        des: <span th:text="${child.getGoodsDesc()}"></span><br>
+        category: <span th:text="${child.getCategory()}"></span><br>
+        <img class="ph" th:src="${'/img/' + child.filename}" alt="some photo"><br>
+        <button><a th:href="@{/catalog/{id}(id=${child.getId()})}">see more</a></button>
+        <hr>
+    </div>
 </div>
-
 <footer th:replace="fragments :: information"></footer>
 </body>
 </html>

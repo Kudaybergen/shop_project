@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>add</title>
+</head>
+<body>
+<h1>add</h1><br>
+<h1><a href="/paket/all">all paket</a><br></h1>
+
+
+<br><br>
+<span style="color: red" th:text="${message}"></span>
+<br><br>
+
+
+
+<form action="/paket/add" method="post" enctype="multipart/form-data">
+    <input type="text" name="paketName" placeholder="имя(макс 255 символ)"><br>
+    <input type="text" name="paketDesc" placeholder="описание(макс 255 символ)"><br>
+    <input type="file" name="file" placeholder="фото(макс 255 символ)"><br>
+    <input type="text" name="paketPrice" placeholder="цена(макс 255 символ)"><br>
+    <input type="text" name="paketArtikul" placeholder="артикул(макс 255 символ)"><br>
+    <input type="text" name="paketMeasurement" placeholder="ед.изм(макс 255 символ)"><br>
+<!--  category:-->
+<!--  <select name="category" id="category">-->
+<!--    <option value="1">man</option>-->
+<!--    <option value="2">woman</option>-->
+<!--    <option value="3">child</option>-->
+<!--  </select><br>-->
+  <input type="submit" value="create">
+</form>
+
+</body>
+</html>

@@ -98,4 +98,9 @@ public class MainController {
 
         return "redirect:/catalog";
     }
+
+    @GetMapping("/test2")
+    public String test2(){
+        return "test";
+    }
 }
