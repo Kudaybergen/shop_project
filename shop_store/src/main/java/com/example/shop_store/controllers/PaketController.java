@@ -28,6 +28,10 @@ public class PaketController {
     private PaketsRepo paketsRepo;
 
 
+    @GetMapping("/")
+    public String index(){
+        return "index";
+    }
 
     @GetMapping("/all")
     public String index(Model model){
@@ -74,10 +78,11 @@ public class PaketController {
         return "paket/add";
     }
 
-    @PostMapping("/all")
+    @PostMapping("/find")
     public String findByName(Model model,
                                  @RequestParam(value = "paketName", required = false) String paketName){
-        List<Pakets> pakets = paketsRepo.findDistinctByArtikul(paketName);
+        List<Pakets> pakets = paketsRepo.findAllByName(paketName);
+        System.out.println(pakets);
         model.addAttribute("pakets", pakets);
         return "paket/index";
     }
@@ -85,20 +90,14 @@ public class PaketController {
     @GetMapping("/test")
     public String test(){
         for(int j = 1; j < 10; ++j) {
-            for (int i = 65; i <= 97 + 25; ++i) {
-                if (!(65 + 25 < i && i < 97)) {
-                    int id = i * j;
-                    int price = i * 1000;
-                    String artikul = "artikul" + Character.toString(i);
-                    String descr = "descr" + Character.toString(i);
-                    String file = null;
-                    String mesure = null;
-                    String name = "name" + Character.toString(i);
-                    Pakets pakets = new Pakets(name, artikul, mesure, price, descr);
-                    pakets.setFilename(file);
-                    paketsRepo.save(pakets);
-                }
-            }
+
+            Pakets pakets = new Pakets();
+            pakets.setArtikul(j + "artikul");
+            pakets.setDesc(j + "desc");
+            pakets.setName(j + "name");
+            pakets.setMeasurement(j + "mesure");
+            pakets.setPrice(j * 10000);
+            paketsRepo.save(pakets);
         }
         return "paket/test";
     }

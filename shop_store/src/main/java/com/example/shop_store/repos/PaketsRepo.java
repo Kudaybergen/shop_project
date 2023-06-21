@@ -1,6 +1,5 @@
 package com.example.shop_store.repos;
 
-import com.example.shop_store.domain.Goods;
 import com.example.shop_store.domain.Pakets;
 import org.springframework.data.repository.CrudRepository;
 
