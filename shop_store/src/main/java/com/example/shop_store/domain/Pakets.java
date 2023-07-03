@@ -13,16 +13,13 @@ public class Pakets {
     private String name;
     private String description;
     private String artikul;
-    private String measurement;
     private float price;
     private String filename;
 
-    public Pakets(String name, String artikul, String measurement, float price, String description) {
+    public Pakets(String name, String artikul, float price, String description) {
         this.name = name;
         this.artikul = artikul;
-        this.measurement = measurement;
         this.price = price;
-        this.filename = filename;
         this.description = description;
     }
 
@@ -36,7 +33,6 @@ public class Pakets {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", artikul='" + artikul + '\'' +
-                ", measurement='" + measurement + '\'' +
                 ", price=" + price +
                 ", filename='" + filename + '\'' +
                 '}';
@@ -64,14 +60,6 @@ public class Pakets {
 
     public void setArtikul(String artikul) {
         this.artikul = artikul;
-    }
-
-    public String getMeasurement() {
-        return measurement;
-    }
-
-    public void setMeasurement(String measurement) {
-        this.measurement = measurement;
     }
 
     public float getPrice() {

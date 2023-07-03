@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>add</title>
+    <style th:replace="fragments :: styleOne"></style>
 </head>
 <body>
+<nav th:replace="fragments :: navigation"></nav>
+<br>
 <h1>add</h1><br>
 <h1><a href="/paket/all">all paket</a><br></h1>
 
@@ -21,7 +24,6 @@
     <input type="file" name="file" placeholder="фото(макс 255 символ)"><br>
     <input type="text" name="paketPrice" placeholder="цена(макс 255 символ)"><br>
     <input type="text" name="paketArtikul" placeholder="артикул(макс 255 символ)"><br>
-    <input type="text" name="paketMeasurement" placeholder="ед.изм(макс 255 символ)"><br>
 <!--  category:-->
 <!--  <select name="category" id="category">-->
 <!--    <option value="1">man</option>-->
@@ -31,5 +33,8 @@
   <input type="submit" value="create">
 </form>
 
+
+
+<footer th:replace="fragments :: information"></footer>
 </body>
 </html>

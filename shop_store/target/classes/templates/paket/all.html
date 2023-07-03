@@ -3,8 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>index</title>
+    <style th:replace="fragments :: styleOne"></style>
 </head>
 <body>
+
+<nav th:replace="fragments :: navigation"></nav>
+<br>
+
 <h1>paket</h1>
 <br>
 
@@ -33,10 +38,11 @@
     описание: <span th:text="${paket.getDesc()}"></span><br>
     цена: <span th:text="${paket.getPrice()}"></span><br>
     артикул: <span th:text="${paket.getArtikul()}"></span><br>
-    ед.изм: <span th:text="${paket.getMeasurement()}"></span><br>
     <img class="ph" th:src="${'/img/' + paket.filename}" alt="some photo"><br>
     <hr>
 </div>
 
+
+<footer th:replace="fragments :: information"></footer>
 </body>
 </html>

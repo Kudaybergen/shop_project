@@ -27,18 +27,12 @@ public class PaketController {
     @Autowired
     private PaketsRepo paketsRepo;
 
-
-    @GetMapping("/")
-    public String index(){
-        return "index";
-    }
-
     @GetMapping("/all")
     public String index(Model model){
         Iterable<Pakets> pakets = paketsRepo.findAll();
         System.out.println(pakets);
         model.addAttribute("pakets", pakets);
-        return "paket/index";
+        return "paket/all";
     }
 
     @GetMapping("/add")
@@ -50,15 +44,13 @@ public class PaketController {
                           @RequestParam(value = "paketDesc", required = false) String paketDesc,
                           @RequestParam(value = "file", required = false) MultipartFile file,
                           @RequestParam(value = "paketPrice", required = false) float paketPrice,
-                          @RequestParam(value = "paketArtikul", required = false) String paketArtikul,
-                          @RequestParam(value = "paketMeasurement", required = false) String paketMeasurement) throws IOException {
+                          @RequestParam(value = "paketArtikul", required = false) String paketArtikul) throws IOException {
         System.out.println(paketName);
         System.out.println(paketDesc);
         System.out.println(file);
         System.out.println(paketPrice);
         System.out.println(paketArtikul);
-        System.out.println(paketMeasurement);
-        Pakets pakets = new Pakets(paketName, paketArtikul, paketMeasurement, paketPrice, paketDesc);
+        Pakets pakets = new Pakets(paketName, paketArtikul, paketPrice, paketDesc);
         if (file != null){
             File someFile = new File(uploadPath);
 
@@ -84,7 +76,7 @@ public class PaketController {
         List<Pakets> pakets = paketsRepo.findAllByName(paketName);
         System.out.println(pakets);
         model.addAttribute("pakets", pakets);
-        return "paket/index";
+        return "all";
     }
 
     @GetMapping("/test")
@@ -95,7 +87,6 @@ public class PaketController {
             pakets.setArtikul(j + "artikul");
             pakets.setDesc(j + "desc");
             pakets.setName(j + "name");
-            pakets.setMeasurement(j + "mesure");
             pakets.setPrice(j * 10000);
             paketsRepo.save(pakets);
         }
