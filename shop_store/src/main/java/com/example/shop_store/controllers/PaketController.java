@@ -43,7 +43,7 @@ public class PaketController {
     public String addPost(Model model, @RequestParam(value = "paketName", required = false) String paketName,
                           @RequestParam(value = "paketDesc", required = false) String paketDesc,
                           @RequestParam(value = "file", required = false) MultipartFile file,
-                          @RequestParam(value = "paketPrice", required = false) float paketPrice,
+                          @RequestParam(value = "paketPrice", required = false) double paketPrice,
                           @RequestParam(value = "paketArtikul", required = false) String paketArtikul) throws IOException {
         System.out.println(paketName);
         System.out.println(paketDesc);
@@ -85,7 +85,7 @@ public class PaketController {
 
             Pakets pakets = new Pakets();
             pakets.setArtikul(j + "artikul");
-            pakets.setDesc(j + "desc");
+            pakets.setDescription(j + "desc");
             pakets.setName(j + "name");
             pakets.setPrice(j * 10000);
             paketsRepo.save(pakets);

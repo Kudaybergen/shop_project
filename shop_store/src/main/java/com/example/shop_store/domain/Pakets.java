@@ -13,10 +13,10 @@ public class Pakets {
     private String name;
     private String description;
     private String artikul;
-    private float price;
+    private double price;
     private String filename;
 
-    public Pakets(String name, String artikul, float price, String description) {
+    public Pakets(String name, String artikul, double price, String description) {
         this.name = name;
         this.artikul = artikul;
         this.price = price;
@@ -32,6 +32,7 @@ public class Pakets {
         return "Pakets{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
                 ", artikul='" + artikul + '\'' +
                 ", price=" + price +
                 ", filename='" + filename + '\'' +
@@ -62,14 +63,6 @@ public class Pakets {
         this.artikul = artikul;
     }
 
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
-
     public String getFilename() {
         return filename;
     }
@@ -78,11 +71,19 @@ public class Pakets {
         this.filename = filename;
     }
 
-    public String getDesc() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDesc(String desc) {
-        this.description = desc;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 }

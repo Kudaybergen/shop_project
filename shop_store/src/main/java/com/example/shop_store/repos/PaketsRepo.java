@@ -8,5 +8,7 @@ import java.util.List;
 public interface PaketsRepo extends CrudRepository<Pakets, Long> {
     List<Pakets> findAllByName(String name);
 
-    List<Pakets> findDistinctByArtikul(String artikul);
+    List<Pakets> findAllByArtikul(String artikul);
+
+    List<Pakets> findAllByPrice(double price);
 }
